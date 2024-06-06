@@ -3,12 +3,13 @@ let computerScore = 0;
   //Rock is 1, Paper is 2, Scissors is 3. Which means (if excluding draws from the start), result 3 = Paper won over Rock, 
   //result 4 = Rock won over Scissors, result 5 = Scissors won over Rock.  
 
-function getComputerChoice(min, max) {
-    const minCeiled = Math.ceil(min);
-    const maxFloored = Math.floor(max);
+ 
+  function getComputerChoice() {
+    const minCeiled = Math.ceil(1);
+    const maxFloored = Math.floor(4);
     return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled); // The maximum is exclusive and the minimum is inclusive
   }
-  console.log(getComputerChoice(1, 4));
+
 
 
 function getHumanChoice(){
@@ -27,15 +28,46 @@ function getHumanChoice(){
   alert('Wrong Input! You have to type in either Rock, Paper or Scissors!')
   return HumanChoice;
 }
-console.log(getHumanChoice());
+//console.log(getHumanChoice());
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+let humanSelection = getHumanChoice();
+let computerSelection = getComputerChoice();
+let roundResult = humanSelection + computerSelection;
 
-function playRound(){}
+console.log(humanSelection);
+console.log(computerSelection);
+console.log(roundResult);
+
+/*
+//console.log(humanSelection);
+function playRound(){
+  let winmessage;
+  if (humanSelection === 1) {
+    winmessage = 'you won';
+    return winmessage;
+  } else {
+  winmessage = 'you lost';
+  return winmessage;
+  }
+}
+console.log(playRound());
+*/
+/*
+if humanSelection
+*/
 
 //TEMPLATES AND WIP CODE//
 /*So the main idea is to describe results as attributres and then do something like if result = 5 && player1input = 1 alert(win) else lost and give counter to comp/human.*/
+
+
+ /*
+function getComputerChoice(min, max) {
+    const minCeiled = Math.ceil(min);
+    const maxFloored = Math.floor(max);
+    return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled); // The maximum is exclusive and the minimum is inclusive
+  }
+  console.log(getComputerChoice(1, 4));
+*/
 
 /*function getHumanChoiceAsVariable(){
   let humanChoiceVariable;
