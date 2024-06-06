@@ -38,23 +38,13 @@ console.log(humanSelection);
 console.log(computerSelection);
 console.log(roundResult);
 
-/*
-//console.log(humanSelection);
-function playRound(){
-  let winmessage;
-  if (humanSelection === 1) {
-    winmessage = 'you won';
-    return winmessage;
-  } else {
-  winmessage = 'you lost';
-  return winmessage;
+function playRound () {
+  if (humanSelection == computerSelection) {
+    alert('Draw! Next round');
+  } else
+    alert('We\'re not finished here!')  
   }
-}
-console.log(playRound());
-*/
-/*
-if humanSelection
-*/
+  console.log(playRound());
 
 //TEMPLATES AND WIP CODE//
 /*So the main idea is to describe results as attributres and then do something like if result = 5 && player1input = 1 alert(win) else lost and give counter to comp/human.*/
