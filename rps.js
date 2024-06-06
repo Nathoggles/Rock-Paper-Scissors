@@ -1,7 +1,6 @@
 let humanScore = 0;
 let computerScore = 0;
-  //Rock is 1, Paper is 2, Scissors is 3. Which means (if excluding draws from the start), result 3 = Paper won over Rock, 
-  //result 4 = Rock won over Scissors, result 5 = Scissors won over Rock.  
+  //Rock is 1, Paper is 2, Scissors is 3.   
 
  
   function getComputerChoice() {
@@ -13,20 +12,22 @@ let computerScore = 0;
 
 
 function getHumanChoice(){
-  let HumanChoice 
-  HumanChoice = prompt('Let\'s play Rock-Paper-Scissors! What do you pick? Type in your choice!', 'Rock').toLowerCase();
-  if (HumanChoice === 'rock') {
-    HumanChoice = 1;
-    return HumanChoice;
-  } else if (HumanChoice === 'paper') {
-    HumanChoice = 2;
-    return HumanChoice;
-  } else if (HumanChoice === 'scissors') {
-    HumanChoice = 3;
-    return HumanChoice;
-  }
+  let humanChoice 
+  humanChoice = prompt('Let\'s play Rock-Paper-Scissors! What do you pick? Type in your choice!', 'Rock');
+  if (humanChoice === null) {
+    getHumanChoice();
+  } else if (humanChoice.toLowerCase() === 'paper') {
+    humanChoice = 2;
+    return humanChoice;
+  } else if (humanChoice.toLowerCase() === 'scissors') {
+    humanChoice = 3;
+    return humanChoice;
+   } else if (humanChoice.toLowerCase() === 'rock') {
+    humanChoice = 1;
+    return humanChoice;
+    }
   alert('Wrong Input! You have to type in either Rock, Paper or Scissors!')
-  return HumanChoice;
+  getHumanChoice();
 }
 //console.log(getHumanChoice());
 
@@ -38,18 +39,37 @@ console.log(humanSelection);
 console.log(computerSelection);
 console.log(roundResult);
 
+let ComputerChoiceString;
+if (computerSelection === 1) {
+  computerChoiceString = 'Rock';
+} else if (computerSelection === 2) {
+  computerChoiceString = 'Paper';
+} else if (computerSelection === 3) {
+  computerChoiceString = 'Scissors';
+}
+console.log(computerChoiceString);  
+
   //Rock is 1, Paper is 2, Scissors is 3. Which means (if excluding draws from the start), 
   //result 3 = Paper won over Rock, result 4 = Rock won over Scissors, result 5 = Scissors won over Rock.  
 
 function playRound () {
-  if (humanSelection === computerSelection) {
-    alert('Draw! Next round');
-  } else if (roundResult === 3 && humanSelection === 2) {
-    alert('You won the round! You chose Paper, your opponent chose Rock.');
-    humanScore++;
-    }
-  else {
-    alert('We\'re not finished here!')  
+    if (humanSelection === computerSelection) {
+      alert(`Draw! You both chose ${computerChoiceString}`);
+    } else if (roundResult === 3 && humanSelection === 2) {
+      alert('You won the round! You chose Paper, your opponent chose Rock.');
+      humanScore++;
+    } else if (roundResult === 4 && humanSelection === 1) {
+      alert('You won the round! You chose Rock, your opponent chose Scissors.');
+      humanScore++;
+    } else if (roundResult === 5 && humanSelection === 3) {
+      alert('You won the round! You chose Scissors, your opponent chose Rock.');
+      humanScore++;
+    } else if (typeof humanSelection === 'string') {
+      return
+    /*} else if (humanSelection === null) {
+      return getHumanChoice();*/
+    } else {
+    alert(`Sadly, you lost the round. Your opponent chose ${computerChoiceString}. Cheer up!'`)  
     }
   }
   console.log(playRound());
