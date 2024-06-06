@@ -69,20 +69,20 @@ let roundResult = humanSelection + computerSelection;
 
   //console.log(computerChoiceString); 
     if (humanSelection === computerSelection) {
-      alert(`Draw! You both chose ${computerChoiceString}`);
+      alert(`Draw! You both chose ${computerChoiceString}. ${i} rounds to go.`);
     } else if (roundResult === 3 && humanSelection === 2) {
-      alert('You won the round! You chose Paper, your opponent chose Rock.');
+      alert(`You won the round! You chose Paper, your opponent chose Rock. ${i} rounds to go.`);
       humanScore++;
     } else if (roundResult === 4 && humanSelection === 1) {
-      alert('You won the round! You chose Rock, your opponent chose Scissors.');
+      alert(`You won the round! You chose Rock, your opponent chose Scissors. ${i} rounds to go.`);
       humanScore++;
     } else if (roundResult === 5 && humanSelection === 3) {
-      alert('You won the round! You chose Scissors, your opponent chose Rock.');
+      alert(`You won the round! You chose Scissors, your opponent chose Rock. ${i} rounds to go.`);
       humanScore++;
     } else if (typeof humanSelection === 'string') {
       return
     } else {
-    alert(`Sadly, you lost the round. Your opponent chose ${computerChoiceString}. Cheer up!'`);
+    alert(`Sadly, you lost the round. Your opponent chose ${computerChoiceString}. Cheer up!' ${i} rounds to go.`);
     computerScore++; 
     }
     console.log(humanScore);
