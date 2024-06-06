@@ -69,20 +69,20 @@ let roundResult = humanSelection + computerSelection;
 
   //console.log(computerChoiceString); 
     if (humanSelection === computerSelection) {
-      alert(`Draw! You both chose ${computerChoiceString}. ${i} rounds to go.`);
+      alert(`Draw! You both chose ${computerChoiceString}. ${5 - i} rounds to go.`);
     } else if (roundResult === 3 && humanSelection === 2) {
-      alert(`You won the round! You chose Paper, your opponent chose Rock. ${i} rounds to go.`);
+      alert(`You won the round! You chose Paper, your opponent chose Rock. ${5 - i} rounds to go.`);
       humanScore++;
     } else if (roundResult === 4 && humanSelection === 1) {
-      alert(`You won the round! You chose Rock, your opponent chose Scissors. ${i} rounds to go.`);
+      alert(`You won the round! You chose Rock, your opponent chose Scissors. ${5 - i} rounds to go.`);
       humanScore++;
     } else if (roundResult === 5 && humanSelection === 3) {
-      alert(`You won the round! You chose Scissors, your opponent chose Rock. ${i} rounds to go.`);
+      alert(`You won the round! You chose Scissors, your opponent chose Rock. ${5 - i} rounds to go.`);
       humanScore++;
     } else if (typeof humanSelection === 'string') {
       return
     } else {
-    alert(`Sadly, you lost the round. Your opponent chose ${computerChoiceString}. Cheer up!' ${i} rounds to go.`);
+    alert(`Sadly, you lost the round. Your opponent chose ${computerChoiceString}. Cheer up!' ${5 - i} rounds to go.`);
     computerScore++; 
     }
     console.log(humanScore);
@@ -95,7 +95,7 @@ if (computerScore < humanScore) {
 } else if (computerScore > humanScore) {
   alert(`You lost ${humanScore} to ${computerScore} :( But you can always reload the page for another game! Close the page to exit.`)
 } else if (computerScore = humanScore) {
-  alert(`That's a draw, ${humanScore} to ${computerScore}! But you can always reload the page for another game! Close the page to exit.`)
+  alert(`That's a draw, ${humanScore} : ${computerScore}! But you can always reload the page for another game! Close the page to exit.`)
 }
 
 }
