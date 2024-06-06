@@ -1,3 +1,6 @@
+
+
+
 let humanScore = 0;
 let computerScore = 0;
   //Rock is 1, Paper is 2, Scissors is 3.   
@@ -66,14 +69,18 @@ function playRound () {
       humanScore++;
     } else if (typeof humanSelection === 'string') {
       return
-    /*} else if (humanSelection === null) {
-      return getHumanChoice();*/
     } else {
-    alert(`Sadly, you lost the round. Your opponent chose ${computerChoiceString}. Cheer up!'`)  
+    alert(`Sadly, you lost the round. Your opponent chose ${computerChoiceString}. Cheer up!'`);
+    computerScore++; 
     }
   }
   console.log(playRound());
   console.log(humanScore);
+
+  for (let i = 0; i <= 4; i++) {
+    playRound();
+  }
+
 
 //TEMPLATES AND WIP CODE//
 /*So the main idea is to describe results as attributres and then do something like if result = 5 && player1input = 1 alert(win) else lost and give counter to comp/human.*/
