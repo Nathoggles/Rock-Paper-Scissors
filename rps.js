@@ -1,8 +1,8 @@
-
-
-
 let humanScore = 0;
 let computerScore = 0;
+
+
+
   //Rock is 1, Paper is 2, Scissors is 3.   
 
  
@@ -34,28 +34,40 @@ function getHumanChoice(){
 }
 //console.log(getHumanChoice());
 
+
+
+
+
+ 
+
+  //Rock is 1, Paper is 2, Scissors is 3. Which means (if excluding draws from the start), 
+  //result 3 = Paper won over Rock, result 4 = Rock won over Scissors, result 5 = Scissors won over Rock.  
+ 
+ function playGame(){
+  for (let i = 0; i <= 4; i++) {
+    playRound();
+
+
+
+
+function playRound () {
 let humanSelection = getHumanChoice();
 let computerSelection = getComputerChoice();
 let roundResult = humanSelection + computerSelection;
 
-console.log(humanSelection);
-console.log(computerSelection);
-console.log(roundResult);
+  //console.log(humanSelection);
+  //console.log(computerSelection);
+  //console.log(roundResult);
+  let ComputerChoiceString;
+  if (computerSelection === 1) {
+    computerChoiceString = 'Rock';
+  } else if (computerSelection === 2) {
+    computerChoiceString = 'Paper';
+  } else if (computerSelection === 3) {
+    computerChoiceString = 'Scissors';
+  }
 
-let ComputerChoiceString;
-if (computerSelection === 1) {
-  computerChoiceString = 'Rock';
-} else if (computerSelection === 2) {
-  computerChoiceString = 'Paper';
-} else if (computerSelection === 3) {
-  computerChoiceString = 'Scissors';
-}
-console.log(computerChoiceString);  
-
-  //Rock is 1, Paper is 2, Scissors is 3. Which means (if excluding draws from the start), 
-  //result 3 = Paper won over Rock, result 4 = Rock won over Scissors, result 5 = Scissors won over Rock.  
-
-function playRound () {
+  //console.log(computerChoiceString); 
     if (humanSelection === computerSelection) {
       alert(`Draw! You both chose ${computerChoiceString}`);
     } else if (roundResult === 3 && humanSelection === 2) {
@@ -73,15 +85,22 @@ function playRound () {
     alert(`Sadly, you lost the round. Your opponent chose ${computerChoiceString}. Cheer up!'`);
     computerScore++; 
     }
+    console.log(humanScore);
+    console.log(computerScore);
   }
-  console.log(playRound());
-  console.log(humanScore);
+  //console.log(playRound());
+}
+if (computerScore < humanScore) {
+  alert(`You won ${humanScore} to ${computerScore}! Reload the page for another game or close it to exit.`)
+} else if (computerScore > humanScore) {
+  alert(`You lost ${humanScore} to ${computerScore} :( But you can always reload the page for another game! Close the page to exit.`)
+} else if (computerScore = humanScore) {
+  alert(`That's a draw, ${humanScore} to ${computerScore}! But you can always reload the page for another game! Close the page to exit.`)
+}
 
-  for (let i = 0; i <= 4; i++) {
-    playRound();
-  }
+}
 
-
+playGame();
 //TEMPLATES AND WIP CODE//
 /*So the main idea is to describe results as attributres and then do something like if result = 5 && player1input = 1 alert(win) else lost and give counter to comp/human.*/
 
