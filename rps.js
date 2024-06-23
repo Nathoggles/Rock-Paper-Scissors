@@ -43,9 +43,9 @@ function getHumanChoice(){
   //Rock is 1, Paper is 2, Scissors is 3. Which means (if excluding draws from the start), 
   //result 3 = Paper won over Rock, result 4 = Rock won over Scissors, result 5 = Scissors won over Rock.  
  
- function playGame(){
+ /*function playGame(){
   for (let i = 0; i <= 4; i++) {
-    playRound();
+    playRound();*/
 
 
 
