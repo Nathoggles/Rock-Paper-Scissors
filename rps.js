@@ -100,6 +100,7 @@ if (computerScore < humanScore) {
 
 }
 
+
 playGame();
 //TEMPLATES AND WIP CODE//
 /*So the main idea is to describe results as attributres and then do something like if result = 5 && player1input = 1 alert(win) else lost and give counter to comp/human.*/

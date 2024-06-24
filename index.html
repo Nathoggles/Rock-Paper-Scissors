@@ -1,21 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="styles.css"> 
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissors</title>
-    <!-- <script scr="rps.js"></script> -->
-    
-    
 </head>
 <body>
-    <h3>Let's play Rock-Paper-Scissors! What do you pick?</h3>
-    <br>
-    <div id = "buttons">
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
+    
+<div id="game">
+    <!--
+    <div id="logo">
+        <img src="rps_logo.jpg" alt="A panda and a hare play 'Rock, Paper, Scissors'" height="auto" width="250">
+        </div>
+    -->
+     <div id="images">
+        <div id="img1">
+            <img src="rock.jpg" alt="Rock" height="auto" width="100">
+        </div>
+        <div id="img2">
+            <img src="paper.jpg" alt="Paper" height="auto" width="100">
+        </div>
     </div>
+    <div id="belowimages">
+        <h3>Let's play Rock-Paper-Scissors! What do you pick?</h3>
+        <div id = "buttons">
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissors">Scissors</button>
+        </div>
+    </div>
+</div>
     <script type="text/javascript" src="rps.js"></script>
 </body>
 </html>
