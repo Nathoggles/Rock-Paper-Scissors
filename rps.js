@@ -1,6 +1,4 @@
-let humanScore = 0;
-let computerScore = 0;
-let i = 0;
+
   /*const pRock = document.querySelector("#rock");
   const pPaper = document.querySelector("#paper");
   const pScissors = document.querySelector("#scissors");
@@ -22,8 +20,19 @@ let i = 0;
 //Rock is 1, Paper is 2, Scissors is 3. Which means (if excluding draws from the start), 
   //result 3 = Paper won over Rock, result 4 = Rock won over Scissors, result 5 = Scissors won over Rock.  
 
+let numberOfGames = 0;
+
+function firstPlay(){
+  if (numberOfGames === 0){
+  return playGame();
+};
+};
+
+  function playGame(){
+    let i = 0;
+    let humanScore = 0;
+    let computerScore = 0;
  let humanSelection;
-function getHumanChoice(){
    click.forEach((button) => {
     button.addEventListener("click", () => {
         console.log(button.id)
@@ -39,29 +48,55 @@ function getHumanChoice(){
           }
      let computerSelection = getComputerChoice();
      let roundResult = humanSelection + computerSelection;
+     i++;
      if (humanSelection === computerSelection) {
-      alert(`Draw! You both chose ${button.id}. ${4 - i} rounds to go.`);
+      alert(`Draw! You both chose ${button.id}. ${5 - i} rounds to go.`);
+        if (i === 5) {return result();}
     } else if (roundResult === 3 && humanSelection === 2) {
-      alert(`You won the round! You chose Paper, your opponent chose Rock. ${4 - i} rounds to go.`);
+      alert(`You won the round! You chose Paper, your opponent chose Rock. ${5 - i} rounds to go.`);
       humanScore++;
+      if (i === 5) {return result();}
     } else if (roundResult === 4 && humanSelection === 1) {
-      alert(`You won the round! You chose Rock, your opponent chose Scissors. ${4 - i} rounds to go.`);
+      alert(`You won the round! You chose Rock, your opponent chose Scissors. ${5 - i} rounds to go.`);
       humanScore++;
+      if (i === 5) {return result();}
     } else if (roundResult === 5 && humanSelection === 3) {
-      alert(`You won the round! You chose Scissors, your opponent chose Rock. ${4 - i} rounds to go.`);
+      alert(`You won the round! You chose Scissors, your opponent chose Rock. ${5 - i} rounds to go.`);
       humanScore++;
-    } else if (typeof humanSelection === 'string') {
-      return
-    } else {
-    alert(`Sadly, you lost the round. Your opponent chose ${button.id}. Cheer up!' ${4 - i} rounds to go.`);
+      if (i === 5) {return result();} 
+    }  else {
+    alert(`Sadly, you lost the round. Your opponent chose ${button.id}. Cheer up!' ${5 - i} rounds to go.`);
     computerScore++; 
+    if (i === 5) {return result();}
     }
     });
   });
-  
+
+  function result() {
+    if (computerScore < humanScore) {
+      alert(`You won ${humanScore} : ${computerScore}! Reload the page for another game or close it to exit.`);
+      i = 0;
+      return numberOfGames++;
+
+    } else if (computerScore > humanScore) {
+      alert(`You lost ${humanScore} : ${computerScore} :( Another game? Close the page to exit.`);
+      i = 0;
+      return numberOfGames++;
+
+    } else if (computerScore = humanScore) {
+      alert(`That's a draw, ${humanScore} : ${computerScore}! Another game? Close the page to exit.`);
+      i = 0;
+      return numberOfGames++;
+
+    }
+  };
+
 };
 
-getHumanChoice();
+
+
+
+firstPlay();
 
 /*click.forEach((button) => {
   button.addEventListener("click", () => {
