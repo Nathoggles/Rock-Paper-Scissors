@@ -5,12 +5,18 @@
     font-optical-sizing: auto;
     font-weight: 420;
     font-style: normal;
+    box-sizing: border-box;
   }
   
 
 
 #game {
     background-color: #f0f1f3;
+    width: 500px;
+    margin: 25%;
+    border: 5px dashed black;
+
+   /* background-color: #f0f1f3;
     border: 5px dashed black;
     padding: 5px;
     
@@ -22,8 +28,8 @@
     transform: translate(-50%, -50%);
    
     align-items: center; 
-    justify-content: center; 
-    /*align-items: center;*/
+    justify-content: center; */
+   
     
    
    
@@ -47,11 +53,29 @@
 #images {
     padding: 0 10px; 
     margin: 0 auto; 
-    width: 90%; 
+    display: inline-flex;
+}
+
+#aboveimages {
+    text-align: center; 
+}
+
+#score {
+   padding: 0 10px; 
+    margin: 0 auto; 
+    width: 40%; 
     height: 60%; 
     display: flex; 
     align-items: center; 
-    justify-content: space-between; 
+    justify-content: space-between;  
+}
+
+#you{
+    align-items: left;
+}
+
+#npc {
+    align-items: right;
 }
 
 #belowimages {
