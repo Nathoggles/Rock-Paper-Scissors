@@ -12,9 +12,9 @@
 
 #game {
     background-color: #f0f1f3;
-    width: 500px;
     margin: 25%;
     border: 5px dashed black;
+    text-align: center;
 
    /* background-color: #f0f1f3;
     border: 5px dashed black;
@@ -51,8 +51,6 @@
 }
 
 #images {
-    padding: 0 10px; 
-    margin: 0 auto; 
     display: inline-flex;
 }
 
@@ -95,18 +93,18 @@
 
 #img1
 {
-    height: 50%;
+    /*height: 50%;
     width: 50%;  
     margin-right: 5%;
-    margin-left: 20%;
+    margin-left: 20%;*/
    /* margin-right: 160px;*/
 }
 
 #img2
 {
-    height: 50%;
+    /*height: 50%;
     width: 50%;  
-    margin-left: auto;
+    margin-left: auto;*/
 /*    position: absolute;
     margin-right: -320px;
     display: display-inside;*/
