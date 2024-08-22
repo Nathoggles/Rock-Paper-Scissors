@@ -83,6 +83,16 @@
     min-height: 0px;
 }
 
+#divbuttons {
+    display: flex;
+    justify-content: center; 
+}
 
-
-
+button {
+/*margin: 0;
+padding: 0;
+border: 0px;
+  cursor: pointer;
+  appearance: none;
+  background-color: inherit;*/
+  flex-basis: 30px;
