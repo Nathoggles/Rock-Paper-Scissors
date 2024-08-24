@@ -22,7 +22,8 @@
     flex-basis: 800px;
     border: 5px dashed black;
     flex-direction: column;
-    justify-content: space-between;  /*
+    justify-content: space-between;
+    background-color: #F1F3EE;  /*
     background-color: #f0f1f3;
 
     text-align: center;
@@ -86,19 +87,30 @@
 #divbuttons {
     display: flex;
     justify-content: center; 
+    align-items: center;
     gap: 2vh;
+    border: 0px;
 }
 
-#divbuttons {
-margin: 0;
-padding: 0;
-border: 0px;
-  cursor: pointer;
-  appearance: none;
-  background-color: inherit;
+button {
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    background-color: #F1F3EE; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    border: 1px solid black;
 }
+
+button:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+
 
 .icon {
     flex-shrink: 0;
     min-width: 120px;
+    
 }
