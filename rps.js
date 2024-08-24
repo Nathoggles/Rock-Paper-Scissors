@@ -5,6 +5,8 @@
   */
   const click = document.querySelectorAll(".gamebuttons");
   const text = document.querySelector("#text");
+  const pc = document.querySelector("#pc");
+  const comp = document.querySelector("#comp");
   console.log(text)
 
 
@@ -51,6 +53,8 @@ function firstPlay(){
      let computerSelection = getComputerChoice();
      let roundResult = humanSelection + computerSelection;
      i++;
+     pc.textContent = humanScore;
+     comp.textContent = computerScore;
      if (humanSelection === computerSelection) {
       text.textContent = `Draw! You both chose ${button.id}. ${5 - i} rounds to go.`;
         if (i === 5) {return result();}
