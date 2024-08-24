@@ -8,8 +8,13 @@
   const pc = document.querySelector("#pc");
   const comp = document.querySelector("#comp");
   const roundCount = document.querySelector("#roundCount");
+  
+
+
   console.log(text)
 
+  //parentNode.removeChild(child) 
+  //parentNode.appendChild(childNode)
 
 
 

@@ -49,12 +49,6 @@
 }
 
 
-.image {
-    min-width: 0px;
-    min-height: 0px;
-}
-
-
 #score {
    justify-content: center;
    gap: 6%;
