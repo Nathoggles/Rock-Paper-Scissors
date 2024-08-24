@@ -53,26 +53,36 @@ function firstPlay(){
      let computerSelection = getComputerChoice();
      let roundResult = humanSelection + computerSelection;
      i++;
-     pc.textContent = humanScore;
-     comp.textContent = computerScore;
      if (humanSelection === computerSelection) {
       text.textContent = `Draw! You both chose ${button.id}. ${5 - i} rounds to go.`;
+      humanScore++;
+      computerScore++;
+      pc.textContent = humanScore;
+     comp.textContent = computerScore;
         if (i === 5) {return result();}
     } else if (roundResult === 3 && humanSelection === 2) {
       text.textContent = `You won the round! You chose Paper, your opponent chose Rock. ${5 - i} rounds to go.`;
       humanScore++;
+      pc.textContent = humanScore;
+     comp.textContent = computerScore;
       if (i === 5) {return result();}
     } else if (roundResult === 4 && humanSelection === 1) {
       text.textContent = `You won the round! You chose Rock, your opponent chose Scissors. ${5 - i} rounds to go.`;
       humanScore++;
+      pc.textContent = humanScore;
+     comp.textContent = computerScore;
       if (i === 5) {return result();}
     } else if (roundResult === 5 && humanSelection === 3) {
       text.textContent = `You won the round! You chose Scissors, your opponent chose Rock. ${5 - i} rounds to go.`;
       humanScore++;
+      pc.textContent = humanScore;
+      comp.textContent = computerScore;
       if (i === 5) {return result();} 
     }  else {
     text.textContent = `Sadly, you lost the round. Your opponent chose ${button.id}. Cheer up!' ${5 - i} rounds to go.`;
     computerScore++; 
+    pc.textContent = humanScore;
+     comp.textContent = computerScore;
     if (i === 5) {return result();}
     }
     });
