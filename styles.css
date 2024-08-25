@@ -8,6 +8,18 @@
     font-size: 1.5vw;
   }
 
+  @media only screen and (max-width: 600px) {
+    * {
+      font-size: 4vw;
+    }
+  }
+
+  @media only screen and (max-width: 1400px) {
+    * {
+      font-size: 3vw;
+    }
+  }
+
 
 #border
 {
@@ -78,6 +90,9 @@
 
 #text {
 min-height: 3.8vw;
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
 #divbuttons {
