@@ -11,15 +11,39 @@
   
   const images = document.querySelector("#images");
   const logo = document.createElement("img");
-  
-
-  logo.setAttribute("id", "logo");
-  logo.setAttribute("width", "250px");
-  logo.setAttribute("heigth", "auto");
-  logo.setAttribute("src", "rps_logo.jpeg");
+    logo.setAttribute("id", "logo");
+    logo.setAttribute("width", "250px");
+    logo.setAttribute("heigth", "auto");
+    logo.setAttribute("src", "rps_logo.jpeg");
+    logo.setAttribute("alt", "A panda and a hare play 'Rock, Paper, Scissors'");
   //console.log(logo);
   images.appendChild(logo);
+  
+  const rockImg = document.createElement("img");
+    rockImg.setAttribute("id", "rockImg");
+    rockImg.setAttribute("class", "buttons");
+    rockImg.setAttribute("width", "50px");
+    rockImg.setAttribute("heigth", "auto");
+    rockImg.setAttribute("src", "icon_ro.jpeg");
+    rockImg.setAttribute("alt", "Rock'");
 
+  const paperImg = document.createElement("img");
+    paperImg.setAttribute("id", "paperImg");
+    paperImg.setAttribute("class", "buttons");
+    paperImg.setAttribute("width", "50px");
+    paperImg.setAttribute("heigth", "auto");
+    paperImg.setAttribute("src", "icon_pa.jpeg");
+    paperImg.setAttribute("alt", "Paper");
+
+  const scissorsImg = document.createElement("img");
+    scissorsImg.setAttribute("id", "scissorsImg");
+    scissorsImg.setAttribute("class", "buttons");
+    scissorsImg.setAttribute("width", "50px");
+    scissorsImg.setAttribute("heigth", "auto");
+    scissorsImg.setAttribute("src", "icon_sc.jpeg");
+    scissorsImg.setAttribute("alt", "Scissors");
+ console.log(rockImg);
+ console.log(scissorsImg);
 
   //console.log(text)
 
@@ -52,7 +76,9 @@ function firstPlay(){
     let i = 0;
     let humanScore = 0;
     let computerScore = 0;
- let humanSelection;
+    let humanSelection;
+    let humanImg;
+    let computerImg;
    click.forEach((button) => {
     button.addEventListener("click", () => {
         console.log(button.id)
