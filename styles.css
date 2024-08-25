@@ -29,21 +29,32 @@
     height: 100vh;
 }
 
-#game {
+
+
+.game {
     display:flex;
     flex-basis: 800px;
-    border: 5px dashed black;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #F1F3EE;  /*
-    background-color: #f0f1f3;
-
-    text-align: center;
-   
-    justify-content: space-between;
-    align-content: space-between;
-    flex-flow: row wrap;*/
+    background-color: #F1F3EE; 
 }
+
+#default {
+    border: 5px dashed black;  
+}
+
+#win {
+    border: 5px dashed rgb(20, 129, 16);
+}
+
+#loss {
+    border: 5px dashed rgb(196, 13, 13);
+}
+
+#draw {
+    border: 5px dashed rgb(141, 141, 141);
+}
+
 #aboveimages {
     text-align: center; 
     min-width: 0px;
@@ -59,6 +70,7 @@
     justify-content:center;
     gap: 10%;
 }
+
 
 
 #score {

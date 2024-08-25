@@ -8,16 +8,18 @@
   const pc = document.querySelector("#pc");
   const comp = document.querySelector("#comp");
   const roundCount = document.querySelector("#roundCount");
+  const gameContainer = document.querySelector(".game");
   
   const images = document.querySelector("#images");
   const logo = document.createElement("img");
     logo.setAttribute("id", "logo");
-    logo.setAttribute("width", "250px");
-    logo.setAttribute("heigth", "auto");
+    logo.setAttribute("width", "auto");
+    logo.setAttribute("height", "270.83px");
     logo.setAttribute("src", "rps_logo.jpeg");
     logo.setAttribute("alt", "A panda and a hare play 'Rock, Paper, Scissors'");
   //console.log(logo);
   images.appendChild(logo);
+  gameContainer.setAttribute("id", "default");
   
   /*
   const rockImg = document.createElement("img");
@@ -105,6 +107,7 @@ function firstPlay(){
     let humanScore = 0;
     let computerScore = 0;
     let humanSelection;
+    let lastRound = "";
     //let humanImg;
     //let computerImg;
 
@@ -116,7 +119,7 @@ function firstPlay(){
 
    click.forEach((button) => {
     button.addEventListener("click", () => {
-        console.log(button.id);
+      gameContainer.setAttribute("id", "default");
         setImgAttributes(humanImg, button.id);
         if (button.id === 'paper') {
           humanSelection = 2;
@@ -144,7 +147,6 @@ function firstPlay(){
             setImgAttributes(computerImg, "scissors");
             computerString = "scissors";
           }
-//update images here
      i++;
      if (humanSelection === computerSelection) {
       text.textContent = `Draw! You both chose ${button.id}.`;
@@ -153,56 +155,70 @@ function firstPlay(){
       pc.textContent = humanScore;
       comp.textContent = computerScore;
       roundCount.textContent = i;
-        if (i === 5) {return result();}
+        if (i === 5) {
+          lastRound = "draw";
+          return result();}
     } else if (roundResult === 3 && humanSelection === 2) {
-      text.textContent = `You won the round! You chose Paper, your opponent chose Rock.`;
+      text.textContent = `You won the round! You chose paper, your opponent chose rock.`;
       humanScore++;
       pc.textContent = humanScore;
       comp.textContent = computerScore;
       roundCount.textContent = i;
-      if (i === 5) {return result();}
+      if (i === 5) {
+        lastRound = "win";
+        return result();}
     } else if (roundResult === 4 && humanSelection === 1) {
-      text.textContent = `You won the round! You chose Rock, your opponent chose Scissors.`;
+      text.textContent = `You won the round! You chose rock, your opponent chose scissors.`;
       humanScore++;
       pc.textContent = humanScore;
       comp.textContent = computerScore;
       roundCount.textContent = i;
-      if (i === 5) {return result();}
+      if (i === 5) {
+        lastRound = "win";
+        return result();}
     } else if (roundResult === 5 && humanSelection === 3) {
-      text.textContent = `You won the round! You chose Scissors, your opponent chose Rock.`;
+      text.textContent = `You won the round! You chose scissors, your opponent chose rock.`;
       humanScore++;
       pc.textContent = humanScore;
       comp.textContent = computerScore;
       roundCount.textContent = i;
-      if (i === 5) {return result();} 
+      if (i === 5) {
+        lastRound = "win";
+        return result();} 
     }  else {
-    text.textContent = `Sadly, you lost the round. You chose ${button.id}, your opponent chose ${computerString}. Cheer up!'`;
+    text.textContent = `Sadly, you lost the round. You chose ${button.id}, your opponent chose ${computerString}. Cheer up!`;
     computerScore++; 
      pc.textContent = humanScore;
      comp.textContent = computerScore;
      roundCount.textContent = i;
-    if (i === 5) {return result();}
+     
+    if (i === 5) {
+      lastRound = "loss";
+      return result();}
     }
     });
   });
 
   function result() {
     if (computerScore < humanScore) {
-      text.textContent = `You won ${humanScore} : ${computerScore}! Another game? Close the page to exit.`;
+      gameContainer.setAttribute("id", "win");
+      text.textContent = `Last round was a ${lastRound}. You won the game overall, ${humanScore} : ${computerScore}! Another game?`;
       i = 0;
       humanScore = 0;
       computerScore = 0;
       return numberOfGames++;
 
     } else if (computerScore > humanScore) {
-      text.textContent = `You lost ${humanScore} : ${computerScore} :( Another game? Close the page to exit. `;
+      gameContainer.setAttribute("id", "loss");
+      text.textContent = `Last round was a ${lastRound}. You lost the game overall, ${humanScore} : ${computerScore}! :( Another game?`;
       i = 0;
       humanScore = 0;
       computerScore = 0;
       return numberOfGames++;
 
     } else if (computerScore = humanScore) {
-      text.textContent = `That's a draw, ${humanScore} : ${computerScore}! Another game? Close the page to exit.`;
+      gameContainer.setAttribute("id", "draw");
+      text.textContent = `Last round was a ${lastRound}. A draw overall! Another game?`;
       i = 0;
       humanScore = 0;
       computerScore = 0;
