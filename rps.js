@@ -9,9 +9,19 @@
   const comp = document.querySelector("#comp");
   const roundCount = document.querySelector("#roundCount");
   
+  const images = document.querySelector("#images");
+  const logo = document.createElement("img");
+  
+
+  logo.setAttribute("id", "logo");
+  logo.setAttribute("width", "250px");
+  logo.setAttribute("heigth", "auto");
+  logo.setAttribute("src", "rps_logo.jpeg");
+  //console.log(logo);
+  images.appendChild(logo);
 
 
-  console.log(text)
+  //console.log(text)
 
   //parentNode.removeChild(child) 
   //parentNode.appendChild(childNode)
