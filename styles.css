@@ -63,6 +63,7 @@
 }
 
 
+
 #belowimages {
     text-align: center; 
     align-self: center;
@@ -73,9 +74,10 @@
     margin-bottom: 2%;
 }
 
-#logo {
-    min-width: 0px;
-    min-height: 0px;
+
+
+#text {
+min-height: 3.8vw;
 }
 
 #divbuttons {

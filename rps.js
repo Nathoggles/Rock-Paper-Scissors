@@ -108,7 +108,7 @@ function firstPlay(){
       return numberOfGames++;
 
     } else if (computerScore > humanScore) {
-      text.textContent = `You lost ${humanScore} : ${computerScore} :( Another game? Close the page to exit.`;
+      text.textContent = `You lost ${humanScore} : ${computerScore} :( Another game? Close the page to exit. `;
       i = 0;
       humanScore = 0;
       computerScore = 0;
