@@ -19,6 +19,7 @@
   //console.log(logo);
   images.appendChild(logo);
   
+  /*
   const rockImg = document.createElement("img");
     rockImg.setAttribute("id", "rockImg");
     rockImg.setAttribute("width", "150px");
@@ -35,19 +36,29 @@
 
   const scissorsImg = document.createElement("img");
     scissorsImg.setAttribute("id", "scissorsImg");
-    scissorsImg.setAttribute("width", "150px");
-    scissorsImg.setAttribute("heigth", "auto");
     scissorsImg.setAttribute("src", "scissors_s.jpeg");
     scissorsImg.setAttribute("alt", "Scissors");
 
+  */
    
     let humanImg = document.createElement("img");
     humanImg.setAttribute("class", "humanImg");
     humanImg.setAttribute("width", "150px");
-    
+    humanImg.setAttribute("heigth", "auto");
+
 
     let computerImg = document.createElement("img");
     computerImg.setAttribute("class", "computerImg");
+    computerImg.setAttribute("width", "150px");
+    computerImg.setAttribute("heigth", "auto");
+
+   function setImgAttributes(actor, choice) {
+      actor.setAttribute("id", choice + "Img");
+      actor.setAttribute("src", choice + "_s.jpeg");
+      actor.setAttribute("alt", choice);
+    }
+
+ 
 
 // console.log(rockImg);
  //console.log(scissorsImg);
@@ -105,36 +116,38 @@ function firstPlay(){
 
    click.forEach((button) => {
     button.addEventListener("click", () => {
-        console.log(button.id)
+        console.log(button.id);
+        setImgAttributes(humanImg, button.id);
         if (button.id === 'paper') {
           humanSelection = 2;
           console.log(humanSelection);
-          humanImg = paperImg;
         } else if (button.id === 'scissors') {
           humanSelection = 3;
           console.log(humanSelection);
-          humanImg = scissorsImg;
          } else if (button.id === 'rock') {
           humanSelection = 1;
           console.log(humanSelection);
-          humanImg = rockImg;
           }
      let computerSelection = getComputerChoice();
      let roundResult = humanSelection + computerSelection;
+     let computerString;
 //Rock is 1, Paper is 2, Scissors is 3.  
           if (computerSelection === 1) {
-            computerImg = rockImg;
+            setImgAttributes(computerImg, "rock");
+            computerString = "rock";
           }
           if (computerSelection === 2) {
-            computerImg = paperImg;
+            setImgAttributes(computerImg, "paper");
+            computerString = "paper";
           }
           if (computerSelection === 3) {
-            computerImg = scissorsImg;
+            setImgAttributes(computerImg, "scissors");
+            computerString = "scissors";
           }
 //update images here
      i++;
      if (humanSelection === computerSelection) {
-      text.textContent = `Draw! You both chose ${button.id}. ${5 - i} rounds to go.`;
+      text.textContent = `Draw! You both chose ${button.id}.`;
       humanScore++;
       computerScore++;
       pc.textContent = humanScore;
@@ -142,28 +155,28 @@ function firstPlay(){
       roundCount.textContent = i;
         if (i === 5) {return result();}
     } else if (roundResult === 3 && humanSelection === 2) {
-      text.textContent = `You won the round! You chose Paper, your opponent chose Rock. ${5 - i} rounds to go.`;
+      text.textContent = `You won the round! You chose Paper, your opponent chose Rock.`;
       humanScore++;
       pc.textContent = humanScore;
       comp.textContent = computerScore;
       roundCount.textContent = i;
       if (i === 5) {return result();}
     } else if (roundResult === 4 && humanSelection === 1) {
-      text.textContent = `You won the round! You chose Rock, your opponent chose Scissors. ${5 - i} rounds to go.`;
+      text.textContent = `You won the round! You chose Rock, your opponent chose Scissors.`;
       humanScore++;
       pc.textContent = humanScore;
       comp.textContent = computerScore;
       roundCount.textContent = i;
       if (i === 5) {return result();}
     } else if (roundResult === 5 && humanSelection === 3) {
-      text.textContent = `You won the round! You chose Scissors, your opponent chose Rock. ${5 - i} rounds to go.`;
+      text.textContent = `You won the round! You chose Scissors, your opponent chose Rock.`;
       humanScore++;
       pc.textContent = humanScore;
       comp.textContent = computerScore;
       roundCount.textContent = i;
       if (i === 5) {return result();} 
     }  else {
-    text.textContent = `Sadly, you lost the round. Your opponent chose ${button.id}. Cheer up!' ${5 - i} rounds to go.`;
+    text.textContent = `Sadly, you lost the round. You chose ${button.id}, your opponent chose ${computerString}. Cheer up!'`;
     computerScore++; 
      pc.textContent = humanScore;
      comp.textContent = computerScore;
