@@ -21,29 +21,39 @@
   
   const rockImg = document.createElement("img");
     rockImg.setAttribute("id", "rockImg");
-    rockImg.setAttribute("class", "buttons");
-    rockImg.setAttribute("width", "50px");
+    rockImg.setAttribute("width", "150px");
     rockImg.setAttribute("heigth", "auto");
-    rockImg.setAttribute("src", "icon_ro.jpeg");
+    rockImg.setAttribute("src", "rock_s.jpeg");
     rockImg.setAttribute("alt", "Rock'");
 
   const paperImg = document.createElement("img");
     paperImg.setAttribute("id", "paperImg");
-    paperImg.setAttribute("class", "buttons");
-    paperImg.setAttribute("width", "50px");
+    paperImg.setAttribute("width", "150px");
     paperImg.setAttribute("heigth", "auto");
-    paperImg.setAttribute("src", "icon_pa.jpeg");
+    paperImg.setAttribute("src", "paper_s.jpeg");
     paperImg.setAttribute("alt", "Paper");
 
   const scissorsImg = document.createElement("img");
     scissorsImg.setAttribute("id", "scissorsImg");
-    scissorsImg.setAttribute("class", "buttons");
-    scissorsImg.setAttribute("width", "50px");
+    scissorsImg.setAttribute("width", "150px");
     scissorsImg.setAttribute("heigth", "auto");
-    scissorsImg.setAttribute("src", "icon_sc.jpeg");
+    scissorsImg.setAttribute("src", "scissors_s.jpeg");
     scissorsImg.setAttribute("alt", "Scissors");
- console.log(rockImg);
- console.log(scissorsImg);
+
+   
+    let humanImg = document.createElement("img");
+    humanImg.setAttribute("class", "humanImg");
+    humanImg.setAttribute("width", "150px");
+    
+
+    let computerImg = document.createElement("img");
+    computerImg.setAttribute("class", "computerImg");
+
+// console.log(rockImg);
+ //console.log(scissorsImg);
+
+//const humanImgSpan = document.createElement("span");
+//const computerImgSpan = document.createElement("span");
 
   //console.log(text)
 
@@ -64,6 +74,13 @@
 //Rock is 1, Paper is 2, Scissors is 3. Which means (if excluding draws from the start), 
   //result 3 = Paper won over Rock, result 4 = Rock won over Scissors, result 5 = Scissors won over Rock.  
 
+
+  function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+};  
+
 let numberOfGames = 0;
 
 function firstPlay(){
@@ -77,23 +94,44 @@ function firstPlay(){
     let humanScore = 0;
     let computerScore = 0;
     let humanSelection;
-    let humanImg;
-    let computerImg;
+    //let humanImg;
+    //let computerImg;
+
+    click.forEach((button) => button.addEventListener("click", function() {
+      removeAllChildNodes(images);  
+      images.appendChild(humanImg);  
+      images.appendChild(computerImg); 
+      }, {once : true}));
+
    click.forEach((button) => {
     button.addEventListener("click", () => {
         console.log(button.id)
         if (button.id === 'paper') {
           humanSelection = 2;
           console.log(humanSelection);
+          humanImg = paperImg;
         } else if (button.id === 'scissors') {
           humanSelection = 3;
           console.log(humanSelection);
+          humanImg = scissorsImg;
          } else if (button.id === 'rock') {
           humanSelection = 1;
           console.log(humanSelection);
+          humanImg = rockImg;
           }
      let computerSelection = getComputerChoice();
      let roundResult = humanSelection + computerSelection;
+//Rock is 1, Paper is 2, Scissors is 3.  
+          if (computerSelection === 1) {
+            computerImg = rockImg;
+          }
+          if (computerSelection === 2) {
+            computerImg = paperImg;
+          }
+          if (computerSelection === 3) {
+            computerImg = scissorsImg;
+          }
+//update images here
      i++;
      if (humanSelection === computerSelection) {
       text.textContent = `Draw! You both chose ${button.id}. ${5 - i} rounds to go.`;
@@ -190,21 +228,6 @@ firstPlay();
  
 
 
- 
-  
- /* click.forEach((button) => {
-    button.addEventListener("click", () => {
-        alert(button.id);
-    });
-  });*/
-
-  /*btna.addEventListener("click", () => {
-    alert("Hello World, I'm the cleanest button");
-  })*/
-
-/*click.addEventListener("click", () => {
-  alert(click.id);
-});*/
 
 /*
 
