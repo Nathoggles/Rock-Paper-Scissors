@@ -1,4 +1,5 @@
 [Check it out live!](https://nathoggles.github.io/Rock-Paper-Scissors/) 
+
 v2: An update to my first project, a Rock-Paper-Scissors game, adding a UI. I had to go back and learn a lot of CSS that I hastily skipped at first, but this should work now as a flexbox interface, including some light mobile optimization. I've mostly left the original code and logic intact and added to it, so it might've got somewaht bloated. However, this way the code should both be readable and reflect the evolvment of my approach.   
 
 v1:
